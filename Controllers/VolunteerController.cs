@@ -19,7 +19,7 @@ namespace Test2.Controllers
         public VolunteerController(IService service, Context context)
         {
             _dbService = service;
-            _dbService.InitContext(context);
+            _dbService.GetPets(context);
         }
         [HttpGet("{id}/pets")]
         public IActionResult GetPets(int id, int year)
@@ -47,17 +47,18 @@ namespace Test2.Controllers
             {
                 _dbService.AssignPetToVolunteer(request);
             }
-            catch (NoSuchVolunteerException ex)
+            catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest("Error");
             }
-            catch (NoSuchPetException ex)
+            catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest("No pet found");
             }
-            catch (VolunteerAlreadyHasSupervisporException ex)
+            catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return BadRequest("Volunteer already has a supervisor");
             }
+            return Ok();
         }
 }
