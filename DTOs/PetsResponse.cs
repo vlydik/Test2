@@ -9,6 +9,7 @@ namespace Test2.DTOs
     {
         public struct Volunteers_Data
         {
+            public int IdVolunteer { get; set; }
             public string Name { get; set; }
             public string Surname { get; set; }
             public string Phone { get; set; }
@@ -16,6 +17,7 @@ namespace Test2.DTOs
             public string Email { get; set; }
             public DateTime StartingDate { get; set; }
         }
+        
         public int IdPet { get; set; }
         public string Name { get; set; }
         public bool IsMale { get; set; }
