@@ -9,6 +9,7 @@ namespace Test2.Entities
         public DbSet<BreedType> BreedTypes { get; set; }
         public DbSet<Volunteer> Volunteers { get; set; }
         public DbSet<Volunteer_Pet> Volunteer_Pets { get; set; }
+        public IEnumerable<object> Volunteer_Pet { get; internal set; }
 
         public Context()
         {

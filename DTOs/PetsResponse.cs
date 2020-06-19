@@ -25,5 +25,6 @@ namespace Test2.DTOs
         public DateTime ApproximateDateOfBirth { get; set; }
         public DateTime DateAdopted { get; set; }
         public List<Volunteers_Data> Volunteers { get; set; }
-            }
+        public object IdBreedType { get; internal set; }
+    }
 }

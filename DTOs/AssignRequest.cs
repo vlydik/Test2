@@ -12,5 +12,6 @@ namespace Test2.DTOs
 
         [Required]
         public int IdPet { get; set; }
+        public int Year { get; internal set; }
     }
 }
